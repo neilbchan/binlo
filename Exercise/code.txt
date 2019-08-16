@@ -1,0 +1,13 @@
+Comment		*#Single comment
+		 /* Multiple line */
+
+Print 		*echo
+Variable 	*$(name)
+Data types	*$str = 'string';	(String) need ' '.
+		 $number = 1;		(Number)
+		 $statement = true;	(Boolean)
+		 $number2 = 2.2		(Float)
+Next line	*<br>
+Escape 		*"Neil\'s" = Neil's
+Constant	*define('Name', 'output' );
+		 ex. echo name;
