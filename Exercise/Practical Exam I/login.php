@@ -13,12 +13,14 @@
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Login</title>
-
+	<style>body{
+		background-image: url("Pic/plants.jpg");
+		background-repeat: no-repeat;
+		background-size: 99.90%;
+		background-position: center; 
+	} </style>
 </head>
 <body>
-	<br>
-	<br>
-	<h1 class="text-center">Login</h1>
 	<br>
 	<br>
 
@@ -27,7 +29,7 @@
 		<form class="form-signin"  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
 			<div class="text-center">
-			  <img src="Pic\Capture.png" width ="250" height="250">
+			  <img src="Pic\Capture.jpg" width ="250" height="250">
 			</div>
 				
 				<br>
