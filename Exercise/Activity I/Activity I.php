@@ -2,35 +2,24 @@
 <html>
 	<body>
 		<?php
-	
-	function reverse(){
-		for($x = 4; $x >= 0; $x-- ){
-			echo "Number: $x <br>";
-		}
-	}
-	reverse();
 
 	function reverseArray(){
 		$rev = array(1, 2, 3, 4);
-		$arrlength = count($rev);
+		$temp = array();
+		$arrlength = sizeof($rev)-1;
 
-		for($x = 5; $x >= $arrlength; $x--){
-			echo $rev[$x];
+	
+
+		$hello = 1;
+		for($x = $arrlength; $x >-1; $x--)
+		{
+			echo $temp[$hello] = $rev[$x];
+			$hello++;
 			echo "<br>";
 		}
+		echo $temp;
 	}
 	reverseArray();
-
-	function reverseDoWhile(){
-		$revdo = array(1, 2, 3, 4);
-		$arrdolength = count($revdo);
-		do{
-			echo "Number: $revdo[$x] <br>";
-			$x--;
-		}while($x >= $arrdolength);
-		echo "<br>";
-	}
-	reverseDoWhile();
 
 		?>
 	</body>
