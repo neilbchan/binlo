@@ -29,7 +29,7 @@
 		<form class="form-signin"  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
 			<div class="text-center">
-			  <img src="Pic\Capture.jpg" width ="500" height="500">
+			  <img src="Pic\Capture.jpg" width ="200" height="200">
 			</div>
 				
 				<br>
