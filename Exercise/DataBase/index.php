@@ -2,6 +2,7 @@
 	require ('config/config.php');
 	require ('config/dbConnection.php');
 
+
 	#Create Query
 	$query = 'SELECT * FROM users';
 
@@ -18,14 +19,10 @@
 	mysqli_close($conn);
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<?php 
+		include('inc/header.php')
+	?>
 
-	<title>User Account</title>
-</head>
-<body>
 	<div class = "jumbotron">
 		<h1 style="font-family: 'Impact'; text-align: center;">Users</h1>
 		<?php
@@ -35,13 +32,16 @@
 				<h3><?php echo $user['userName']; ?></h3>
 				<small> Created On <?php echo $user['date'];?></small>
 				<br>
-				<a class="btn btn-primary" href="post.php?id=<?php echo $user['id'];?>">Readmore</a>
+				<a class="btn btn-primary" href="post.php?id=<?php echo $user['id'];?>">Read More</a>
 				<br>
 				<hr class="my-4">
 			</div>
 		<?php endforeach;?>
 	</div>
 
+	<?php 
+		include('inc/footer.php')
+	?>
 
 </body>
 </html>

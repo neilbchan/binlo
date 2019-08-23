@@ -13,23 +13,39 @@
 
 	#Fetch data
 	$users = mysqli_fetch_assoc($result);
+	print_r($users);
+
+	#Check submit                 
+	if(isset($_POST['delete'])){
+		#Get Form data
+		$delete_id = $_POST['delete_id'];
+		$userName = mysqli_real_escape_string($conn,$_POST['userName']);
+		$firstName = mysqli_real_escape_string($conn,$_POST['firstName']);
+		$lastName = mysqli_real_escape_string($conn,$_POST['lastName']);
+
+	#Query
+	$query = "DELETE FROM users WHERE id = {$delete_id}";
+
+		if (mysqli_query($conn, $query)) {
+			header('Location:'.ROOT_URL.'');
+		}else {
+			echo 'Error:' .mysqli_error($conn);
+		}
+			#Close Connection
+		mysqli_close($conn);
+	}
 
 
-	#Free result
-	mysqli_free_result($result);
+	// #Free result
+	// mysqli_free_result($result);
 
-	#Close Connection
-	mysqli_close($conn);
+
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<?php 
+		include('inc/header.php')
+	?>
 
-	<title>User Account</title>
-</head>
-<body>
 	<div class = "jumbotron">
 		<h1 style="font-family: 'Impact'; text-align: center;">Users</h1>
 
@@ -40,12 +56,25 @@
 								<?php echo $users['lastName'];?>
 			</h4>
 			<small> Created On <?php echo $users['date'];?></small>
+
 			<br>
-			<a class="btn btn-success" href="index.php">Back</a>
+			<form class="pull-right" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+				<input type="hidden" name="delete_id" value="<?php echo $users['id']; ?>">
+				<input type="submit" name="delete" value="delete" class="btn btn-danger">
+			</form>
+
+				<a href="editpost.php?id=<?php echo $users['id'];?>" class="btn btn-danger">Edit</a>
+				<a class="btn btn-success" href="index.php">Back</a>
+
 			<br>
 			<hr class="my-4">
 		</div>
 	</div>
+
+	<?php 
+		include('inc/footer.php')
+	?>
+
 
 
 </body>
