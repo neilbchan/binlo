@@ -1,7 +1,21 @@
-<?php include "Mywebsite.php"; ?>
+<!DOCTYPE html>
+<html>
+	<?php include 'Header.php'; ?>
 
-    <h1>About</h1>
-    <img src="picture/picture2.jpg" alt="This is my Info">
-<?php echo "<br>"; ?>
-<?php require "aboutinfo.php"; ?>
-<?php include "footer.php"; ?>
+		<head>
+		<title>My Webpage</title>
+		<style>
+		body{
+			background-image: url(Pic\samurai.jpg);
+			background-repeat: no-repeat;
+			background-size: contain, cover;
+			background-position: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>About</h1>
+	</body>
+		
+	<?php include 'Footer.php'; ?>
+</html>

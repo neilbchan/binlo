@@ -25,7 +25,7 @@
                 <h6 style="margin-bottom: -15px; margin-left: 10px">Good day</h6>
                 <p>Dummy Heading</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Course</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Courses</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a href="#">Creative Web Design</a>
@@ -37,10 +37,10 @@
                             <a href="#">Mobile Development</a>
                         </li>
                         <li>
-                            <a href="#">Events</a>
+                            <a href="#">Events Management</a>
                         </li>
                         <li>
-                            <a href="#">Training</a>
+                            <a href="#">Training Methodology</a>
                         </li>
                     </ul>
                 </li>
@@ -57,11 +57,11 @@
             <br>
             <br>
             <br>
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a class="download" style="color: #7386D5; font-weight: bold">Log out</a>
-                </li>
-            </ul>
+            <br>
+            <button type="button" class="btn btn-secondary btn-lg" style="margin-left: 40px; padding-left: 50px; padding-right: 50px">
+                <a href="index.php">Logout</a>
+            </button>
+
         </nav>
 
         <!-- Page Content  -->
@@ -85,19 +85,20 @@
             </nav>
             
            <ul class="list-unstyled CTAs">
-                <li>
-                    <img src="images/instructor.png" alt="IMG" width="70px">
-                </li>
-                
-                <li>
-                    <img src="images/training.png" alt="IMG" width="70px">
-                </li>
 
-                <li>
-                    <img src="images/home.png" alt="IMG" width="70px">
-                </li>
+            <p>
+                <span style="font-size: 30px; margin-right: 220px; margin-left: 75px">Instructor</span> 
+                <span style="font-size: 30px; margin-right: 240px;">Training</span>  
+                <span style="font-size: 30px;">Center</span>
+            </p>
+
+   
+                <p>
+                    <img src="images/instructor.png" alt="IMG" width="300px" style="margin-right: 50px; margin-top: 35px">
+                    <img src="images/training.png" alt="IMG" width="300px" style="margin-right: 50px; margin-top: 35px">
+                    <img src="images/home.png" alt="IMG" width="300px" style="margin-top: 35px">
+                </p>
             </ul>
-            
         </div>
     </div>
 
