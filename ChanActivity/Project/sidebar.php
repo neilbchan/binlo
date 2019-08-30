@@ -83,22 +83,34 @@
                     </div>
                 </div>
             </nav>
-            
-           <ul class="list-unstyled CTAs">
 
-            <p>
-                <span style="font-size: 30px; margin-right: 220px; margin-left: 75px">Instructor</span> 
-                <span style="font-size: 30px; margin-right: 240px;">Training</span>  
-                <span style="font-size: 30px;">Center</span>
-            </p>
+<!-- Imageeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
 
-   
-                <p>
-                    <img src="images/instructor.png" alt="IMG" width="300px" style="margin-right: 50px; margin-top: 35px">
-                    <img src="images/training.png" alt="IMG" width="300px" style="margin-right: 50px; margin-top: 35px">
-                    <img src="images/home.png" alt="IMG" width="300px" style="margin-top: 35px">
-                </p>
-            </ul>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <!--<span style="font-size: 200%; margin-left: -30px">Instructor</span>-->
+                    <img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px">
+                    <div class="card-body text-center">
+                        <h6 class="card-title" style="font-size: 200%; margin-left: -30px">Instructor</h6>
+                    </div> 
+                </div>
+                
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">   
+                    <!--<span style="font-size: 30px; margin-left: -35px">Training</span>-->
+                    <img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px">      
+                    <div class="card-body text-center">
+                        <h6 class="card-title" style="font-size: 30px; margin-left: -35px">Training</h6>
+                    </div>     
+                </div>
+               
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">    
+                    <!--<span style="font-size: 30px;">Center</span>-->                 
+                    <img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"> 
+                    <div class="card-body text-center">
+                        <h6 class="card-title" style="font-size: 30px;">Center</h6>
+                    </div>       
+                </div>
+            </div>
         </div>
     </div>
 
