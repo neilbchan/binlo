@@ -8,14 +8,25 @@
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
 
 		//Query
-		$sql = "SELECT * FROM users WHERE users_username = '$username' and users_password = '$password'";
-		// $sql = "SELECT * FROM users WHERE users_username = '$username'";
-		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-		$resultCheck = mysqli_num_rows($result);
+		$sql = $conn->query("SELECT * FROM users WHERE users_username = '$username' and users_password = '$password'");
+		$count = mysqli_num_rows($sql);
+		$sess = mysqli_fetch_object($sql);
 
-		if($resultCheck == 1) {
-	       header("Location: creativewebdesign.php");
+		if($count) {
+
+			    $_SESSION["users_firstname"] = $sess->users_firstname;
+                $_SESSION["users_lastname"] = $sess->users_lastname;
+                $_SESSION["users_email"] = $sess->users_email;
+                $_SESSION["users_contact"] = $sess->users_contact;
+?>
+               
+                    <script type="text/javascript">
+                       alert("Welcome! <?php echo $_SESSION['users_firstname'];?>!");
+                       window.location = "creativewebdesign.php";
+                    </script>
+<?php
+
+	       
 	    }else {
 	    	?>
 	    		<script>
@@ -35,7 +46,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- try.css -->
-	<link rel="stylesheet" type="text/css" href="css/try.css?v=1.1">
+	<link rel="stylesheet" type="text/css" href="css/try.css">
 
 	<!-- Symbol -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

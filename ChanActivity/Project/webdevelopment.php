@@ -23,7 +23,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-    <title>Creative Web Design</title>
+    <title>Web Development</title>
 </head>
 <body>
 
@@ -43,11 +43,11 @@
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Courses</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li style="color: #FCA425">
-                            <a href="#">Creative Web Design</a>
-                        </li>
                         <li>
-                            <a href="webdevelopment.php">Web Development</a>
+                            <a href="creativewebdesign.php">Creative Web Design</a>
+                        </li>
+                        <li style="color: #FCA425">
+                            <a href="#">Web Development</a>
                         </li>
                         <li>
                             <a href="mobiledev.php">Mobile Development</a>

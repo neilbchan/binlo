@@ -43,14 +43,14 @@
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Courses</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li style="color: #FCA425">
-                            <a href="#">Creative Web Design</a>
+                        <li>
+                            <a href="creativewebdesign.php">Creative Web Design</a>
                         </li>
                         <li>
                             <a href="webdevelopment.php">Web Development</a>
                         </li>
-                        <li>
-                            <a href="mobiledev.php">Mobile Development</a>
+                        <li style="color: #FCA425">
+                            <a href="#">Mobile Development</a>
                         </li>
                         <li>
                             <a href="eventsmanagement.php">Events Management</a>

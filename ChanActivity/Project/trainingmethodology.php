@@ -43,8 +43,8 @@
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Courses</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li style="color: #FCA425">
-                            <a href="#">Creative Web Design</a>
+                        <li>
+                            <a href="creativewebdesign.php">Creative Web Design</a>
                         </li>
                         <li>
                             <a href="webdevelopment.php">Web Development</a>
@@ -55,8 +55,8 @@
                         <li>
                             <a href="eventsmanagement.php">Events Management</a>
                         </li>
-                        <li>
-                            <a href="trainingmethodology.php">Training Methodology</a>
+                        <li style="color: #FCA425">
+                            <a href="#">Training Methodology</a>
                         </li>
                     </ul>
                 </li>
