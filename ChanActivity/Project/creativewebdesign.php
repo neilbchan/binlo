@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/sb.css">
+    <link rel="stylesheet" href="css/sb.css?v=1.1">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -89,9 +89,10 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <!--<span style="font-size: 200%; margin-left: -30px">Instructor</span>-->
-                    <img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px">
+                    
+                    <a href="instructor.php"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
-                        <h6 class="card-title" style="font-size: 200%; margin-left: -30px">Instructor</h6>
+                        <h6 class="card-title" style="font-size: 200%; margin-left: -30px"><a href="instructor.php">Instructor</a></h6>
                     </div> 
                 </div>
                 

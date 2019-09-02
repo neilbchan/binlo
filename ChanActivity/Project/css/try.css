@@ -47,7 +47,7 @@
 .button4 {border-radius: 30px;}
 
 .container-login100 {
-  height: 800px;
+  height: 750px;
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -100,7 +100,23 @@
 
 
 .wrap-login100 {
-  width: 500px;
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px 80px 40px 80px;
+}
+
+.wrap-signup100 {
+  width: 700px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
