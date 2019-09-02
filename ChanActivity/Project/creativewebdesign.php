@@ -1,3 +1,14 @@
+<?php
+	require ('config/config.inc.php');
+	session_start();
+
+	$query = "SELECT * FROM users";
+	$result = mysqli_query($conn,$query);
+	$all = mysqli_fetch_all($result,MYSQLI_ASSOC);
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +35,12 @@
 
             <ul class="list-unstyled components">
                 <h6 style="margin-bottom: -15px; margin-left: 10px">Good day</h6>
-                <p>Dummy Heading</p>
+                <p>                  
+                	<!-- //Dummy header -->
+                	<script type="text/javascript">
+                   		<?php echo $_SESSION['users_firstname'];?>
+                    </script>
+                </p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Courses</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -49,7 +65,13 @@
                     <a href="#">Report</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#contactSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contact</a>
+               			<ul class="collapse list-unstyled" id="contactSubMenu">
+               				<br><span style="font-size: 11px; padding-left: 6px">Address:  #201 Mahogany St. Corner Marcos <span style="font-size: 11px; padding-left: 6px">Highway, Santolan (10.79 mi) Pasig 1610</span></span><br><br>
+               				<span style="font-size: 11px; padding-left: 6px">Tel: (02) 656 1738</span><br><br>
+               				<span style="font-size: 11px; padding-left: 6px">www.exceltscc.com/index.html</span>
+	               		
+               			</ul>
                 </li>
             </ul>
             
@@ -90,7 +112,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <!--<span style="font-size: 200%; margin-left: -30px">Instructor</span>-->
                     
-                    <a href="instructor.php"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
+                    <a href="form\instructor.php"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 200%; margin-left: -30px"><a href="instructor.php">Instructor</a></h6>
                     </div> 
@@ -98,7 +120,7 @@
                 
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">   
                     <!--<span style="font-size: 30px; margin-left: -35px">Training</span>-->
-                    <img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px">      
+                    <a href="form\training.php"><img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 30px; margin-left: -35px">Training</h6>
                     </div>     
@@ -106,7 +128,7 @@
                
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">    
                     <!--<span style="font-size: 30px;">Center</span>-->                 
-                    <img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"> 
+                    <a href="form\center.php"><img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"></a> 
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 30px;">Center</h6>
                     </div>       

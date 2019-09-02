@@ -1,5 +1,17 @@
 <?php
-require ('config/config.inc.php');
+	define('DB_HOST' , 'localhost');
+	define('DB_USER' , 'root');
+	define('DB_PASS' , '');
+	define('DB_NAME',  'project');
+?>
+
+<?php
+	#Create Connection
+	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+	if(mysqli_connect_errno()){
+		echo 'Failed to connect to MySQL'.mysqli_connect_errno();
+	}
 ?>
 
 
@@ -17,7 +29,6 @@ require ('config/config.inc.php');
 </head>
 <body>
 
-	<br>
 	<br>
 	<div class="card-body text-center">
         <h1>Instructor</h1>
@@ -114,6 +125,19 @@ require ('config/config.inc.php');
 		    </tr>
 		  </tbody>
 		</table>
-	</div>
+		</div>
+		<button onclick="goBack()" class="btn btn-secondary btn-lg" style="margin: 20px; margin-left: 250px; padding-left: 50px; padding-right: 50px">Back</button>
+			<script>
+				function goBack() {
+  				window.history.back();
+  			}
+			</script>
+
+		<button onclick="goBack()" class="btn btn-secondary btn-lg" style="margin: 20px; margin-left: 540px; padding-left: 40px; padding-right: 40px; background-color: #4CAF50;" type="submit" name="submit">Submit</button>
+			<script>
+				function goBack() {
+  				window.history.back();
+  			}
+			</script>
 </body>
 </html>

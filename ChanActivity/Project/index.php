@@ -3,52 +3,26 @@
 	session_start();
 
 	//Check submit
-	if (isset($_POST['submit'])) {
+	if (isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
 
-	//Query
-	$sql = "SELECT id FROM users WHERE users_username = '$username' and users_password = '$password'";
-	// $sql = "SELECT * FROM users WHERE users_username = '$username'";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-	$resultCheck = mysqli_num_rows($result);
-	$count = mysqli_num_rows($result);
-		// // if($resultCheck < 1){
-		// // 	header("Location: ../index.php")
-		// // 	exit()
-		// // }else{
-		// 	if($row = mysqli_fetch_assoc($result)) {
-		// 		// echo $row['user_username'];
-		// 		//De-hashing pass
-		// 		// $hashedPwdCheck = password_verify($password, $row['users_password'])
-		// 		// if($hashedPwdCheck == false){
-		// 		// 	header("Location: index.php?Login=invalid")
-		// 		// 	exit()
-		// 		// }elseif ($hashedPwdCheck == true) {
-		// 			//Login to next page
-		// 			$_SESSION['u_first'] = $row['users_firstname'];
-		// 			$_SESSION['u_last'] = $row['users_lastname'];
-		// 			header("Location: ../index.php?login=success")
-		// 			exit()
-		// 		// }
-		// 	// }
-		// }
-	if($count == 1) {
-       header("Location: creativewebdesign.php");
-    }else {
-    	?>
-    	<script>
-    		alert("Invalid Credentials")
-    	</script>
-		<?php
-    }
+		//Query
+		$sql = "SELECT * FROM users WHERE users_username = '$username' and users_password = '$password'";
+		// $sql = "SELECT * FROM users WHERE users_username = '$username'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		$resultCheck = mysqli_num_rows($result);
 
-		// if(mysqli_query($conn, $sql)) {
-		//    header("Location: creativewebdesign.php");
-		// }else {
-		// 	echo 'Error:' .mysqli_error($conn);
-		// }
+		if($resultCheck == 1) {
+	       header("Location: creativewebdesign.php");
+	    }else {
+	    	?>
+	    		<script>
+	    			alert("Invalid Credentials")
+	    		</script>
+			<?php
+	    }
 	}
 ?>
 
@@ -70,51 +44,51 @@
 
 
 <body>
-	<div class="container-login100">
-		<div class="wrap-login100">
-			<form action="config/config.inc.php" method="POST">
-				<!-- LOGO -->
-				<div class="text-center">
-				  <img src="images\pnglogo.png" width ="200" height="200">
-				</div>
-				<!-- Label -->
-			
-				<span class="login100-form-title">
-					Member Login
-				</span>
-				 
-				<!-- Username inputbox -->
-				<div class="wrap-input100">
-					<input class="input100" type="username" placeholder="Username" name="username" required autofocus>
-					<span class="symbol-input100">
-						<i class="fa fa-envelope" aria-hidden="true"></i>
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+					<!-- LOGO -->
+					<div class="text-center">
+					  <img src="images\pnglogo.png" width ="200" height="200">
+					</div>
+					<!-- Label -->
+				
+					<span class="login100-form-title">
+						Member Login
 					</span>
-				</div>
-				  	
-				<!-- Password inputbox -->
-				<div class="wrap-input100">
-				  	<input class="input100" type="password" placeholder="Password" name="password" required>
-				  	<span class="symbol-input100" style="padding-left: 33px;">
-						<i class="fa fa-lock" aria-hidden="true"></i>
-					</span>
-				</div>
+					 
+					<!-- Username inputbox -->
+					<div class="wrap-input100">
+						<input class="input100" type="username" placeholder="Username" name="username" required autofocus>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+					  	
+					<!-- Password inputbox -->
+					<div class="wrap-input100">
+					  	<input class="input100" type="password" placeholder="Password" name="password" required>
+					  	<span class="symbol-input100" style="padding-left: 33px;">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
 
-				<!-- Login button -->
-				<br>
-				 <div>	
-				 	<button class="button button4" type="submit" name="login"><b>LOGIN<b></button>
-				</div>
-				<br>
+					<!-- Login button -->
+					<br>
+					 <div>	
+					 	<button class="button button4" type="submit" name="login"><b>LOGIN<b></button>
+					</div>
+					<br>
 
-				<!-- Sign-up button -->
-				<div class="text-center p-t-136">
-					<a class="txt2" href="signup.php">
-						Create your Account
-						<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-					</a>
-				</div>
-			</form>
+					<!-- Sign-up button -->
+					<div class="text-center p-t-136">
+						<a class="txt2" href="signup.php">
+							Create your Account
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </html>
