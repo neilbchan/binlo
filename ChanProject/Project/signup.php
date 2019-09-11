@@ -2,6 +2,7 @@
 
 	require ('config/config.inc.php');
 
+
 	#Check submit
 	if (isset($_POST['submit'])) {
 		$firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
@@ -15,14 +16,45 @@
 	$query = "INSERT INTO users (users_firstname, users_lastname, users_email, users_username, users_password, users_contact) 
 			VALUES ('$firstname', '$lastname', '$email', '$username', '$password', '$contact')";
 
-		if(mysqli_query($conn, $query)) {
-		   header("Location: index.php");
+	$sql_username = "SELECT * FROM users WHERE users_username = '$username'";
+
+	$sql_email = "SELECT * FROM users WHERE users_email = '$email'";
+
+	$res_username = mysqli_query($conn, $sql_username);
+	$res_email = mysqli_query($conn, $sql_email);
+
+
+		if(mysqli_num_rows($res_username) > 0){
+
+			?>
+                <script type="text/javascript">
+                    alert("Username already taken");
+                    window.location = "signup.php";
+                </script>
+			<?php
+
+		}elseif(mysqli_num_rows($res_email) > 0){
+
+			?>
+                <script type="text/javascript">
+                    alert("Email already taken");
+                    window.location = "signup.php";
+                </script>
+			<?php		
+
 		}else {
-			echo 'Error:' .mysqli_error($conn);
+			$insert = mysqli_query($conn, $query);
+
+			?>
+                <script type="text/javascript">
+                    alert("Register Succesful");
+                    window.location = "signup.php";
+                </script>
+			<?php
+			exit();
 		}
 	}
 ?>
-
 
 
 <!DOCTYPE html>
@@ -37,13 +69,13 @@
 	<link rel="stylesheet" type="text/css" href="css/try.css?v=1.1">
 
 </head>
-<body >
+<body>
 
 
 	<div class="container-login100">
 		<div class="wrap-login100">
 
-			<span class="login100-form-title"  style="margin-top: -10px; margin-bottom: 10px">
+			<span class="login100-form-title"  style="margin-top: -35px">
 				Sign up
 			</span>
 
@@ -79,7 +111,6 @@
 				</div>
 
 				<!-- Submit button -->
-				<br>
 				<div style="width: 100%; margin-top: 40px">	
 					<button class="button button4" type="submit" name="submit"><b>Submit<b></button>
 				</div>

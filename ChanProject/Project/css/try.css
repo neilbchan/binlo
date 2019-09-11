@@ -47,7 +47,7 @@
 .button4 {border-radius: 30px;}
 
 .container-login100 {
-  height: 750px;
+  height: 570px;
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -67,6 +67,7 @@
 }
 
 .wrap-login100 {
+  height: 550px;
   width: 960px;
   background: #fff;
   border-radius: 10px;
