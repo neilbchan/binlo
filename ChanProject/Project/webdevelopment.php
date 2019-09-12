@@ -1,10 +1,22 @@
 <?php
+    session_start();
 	require ('config/config.inc.php');
-	session_start();
 
-	$users_firstname = $_SESSION['users_firstname'];
+    $users_username = $_SESSION['users_username'];
+    echo $users_username;	
+    $users_firstname = $_SESSION['users_firstname'];
  	$users_lastname = $_SESSION['users_lastname'];
   	$users_email = $_SESSION['users_email'];
+    $users_contact = $_SESSION['users_contact'];
+
+        if (!isset($_SESSION['users_username'])) {
+            ?>
+                <script type="text/javascript">
+                    alert("You must login first");
+                    // window.location = "index.php";
+                </script>
+            <?php
+    }
 ?>
 
 

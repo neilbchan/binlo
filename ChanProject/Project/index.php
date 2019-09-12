@@ -1,6 +1,6 @@
 <?php
-	require ('config/config.inc.php');
 	session_start();
+	require ('config/config.inc.php');
 
 	//Check submit
 	if (isset($_POST['login'])) {
@@ -8,23 +8,47 @@
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
 
 		//Query
-		$sql = $conn->query("SELECT * FROM users WHERE users_username = '$username' and users_password = '$password'");
-		$count = mysqli_num_rows($sql);
-		$sess = mysqli_fetch_object($sql);
+		$sql = "SELECT * FROM users WHERE users_username = '$username' and users_password = '$password' LIMIT 1";
+		$result = mysqli_query($conn, $sql);
+		$sessquery = $conn->query("SELECT * FROM users WHERE users_username = '$username' and users_password = '$password' LIMIT 1");
+		$sess = mysqli_fetch_object($sessquery);
 
-		if($count) {
+		//Check if sql is correct to log-in
+		if(mysqli_num_rows($result) == 1) {
 
-			$_SESSION["users_firstname"] = $sess->users_firstname;
-			$_SESSION["users_lastname"] = $sess->users_lastname;
-            $_SESSION["users_email"] = $sess->users_email;
-			$_SESSION["users_contact"] = $sess->users_contact;
 
-			?>
-                <script type="text/javascript">
-                	alert("Log-in Successful");
-                    window.location = "creativewebdesign.php";
-                </script>
-			<?php
+			$user_type = mysqli_fetch_assoc($result);
+			//Check if user is admin
+			if($user_type['users_type'] == 'admin'){
+
+				$_SESSION["users_username"] = $sess->users_username;
+				$_SESSION["users_firstname"] = $sess->users_firstname;
+				$_SESSION["users_lastname"] = $sess->users_lastname;
+            	$_SESSION["users_email"] = $sess->users_email;
+				$_SESSION["users_contact"] = $sess->users_contact;
+
+				?>
+	                <script type="text/javascript">
+	                	alert("Welcome Admin");
+	                    window.location = "creativewebdesign.php";
+	                </script>
+				<?php
+
+			}else{
+
+				$_SESSION["users_username"] = $sess->users_username;
+				$_SESSION["users_firstname"] = $sess->users_firstname;
+				$_SESSION["users_lastname"] = $sess->users_lastname;
+            	$_SESSION["users_email"] = $sess->users_email;
+				$_SESSION["users_contact"] = $sess->users_contact;
+
+				?>
+	                <script type="text/javascript">
+	                	alert("Log-in Successful");
+	                    window.location = "creativewebdesign.php";
+	                </script>
+				<?php
+			} 
 
 	    }else {
 	    	?>

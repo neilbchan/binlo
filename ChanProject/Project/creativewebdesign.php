@@ -1,10 +1,22 @@
 <?php
-	require ('config/config.inc.php');
 	session_start();
+    require ('config/config.inc.php');
 
+    $users_username = $_SESSION['users_username'];
 	$users_firstname = $_SESSION['users_firstname'];
  	$users_lastname = $_SESSION['users_lastname'];
   	$users_email = $_SESSION['users_email'];
+    $users_contact = $_SESSION['users_contact'];
+
+
+    //     if (!isset($_SESSION['users_username'])) {
+    //         ?>
+    //             <script type="text/javascript">
+    //                 alert("You must login first");
+    //                 window.location = "index.php";
+    //             </script>
+    //         <?php
+    // }
 ?>
 
 
@@ -81,6 +93,10 @@
             <br>
             <button type="button" class="btn btn-secondary btn-lg" style="margin-left: 40px; padding-left: 50px; padding-right: 50px">
                 <a href="index.php">Logout</a>
+                <?php
+                    session_destroy();
+                    unset($_SESSION['users_username']);
+                ?>
             </button>
 
         </nav>

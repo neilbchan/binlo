@@ -48,7 +48,7 @@
 			?>
                 <script type="text/javascript">
                     alert("Register Succesful");
-                    window.location = "signup.php";
+                    window.location = "index.php";
                 </script>
 			<?php
 			exit();
