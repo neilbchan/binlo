@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2019 at 02:34 PM
+-- Generation Time: Sep 26, 2019 at 02:07 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -25,38 +25,87 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `evaluation`
+-- Table structure for table `center`
 --
 
-CREATE TABLE `evaluation` (
-  `evaInstructorOne` int(5) NOT NULL,
-  `evaInstructorTwo` int(5) NOT NULL,
-  `evaInstructorThree` int(5) NOT NULL,
-  `evaInstructorFour` int(5) NOT NULL,
-  `evaInstructorFive` int(11) NOT NULL,
-  `evaInstructorSix` int(11) NOT NULL,
-  `evaTrainingOne` int(5) NOT NULL,
-  `evaTrainingTwo` int(5) NOT NULL,
-  `evaTrainingThree` int(5) NOT NULL,
-  `evaTrainingFour` int(5) NOT NULL,
-  `evaTrainingFive` int(5) NOT NULL,
-  `evaTrainingSix` int(5) NOT NULL,
-  `evaCenterOne` int(11) NOT NULL,
-  `evaCenterTwo` int(11) NOT NULL,
-  `evaCenterThree` int(11) NOT NULL,
-  `evaCenterFour` int(11) NOT NULL,
-  `evaCenterFive` int(11) NOT NULL,
-  `evaCenterSix` int(11) NOT NULL
+CREATE TABLE `center` (
+  `center_id` int(255) NOT NULL,
+  `center_course` varchar(255) NOT NULL,
+  `evaCenterOne` int(255) NOT NULL,
+  `evaCenterTwo` int(255) NOT NULL,
+  `evaCenterThree` int(255) NOT NULL,
+  `evaCenterFour` int(255) NOT NULL,
+  `evaCenterFive` int(255) NOT NULL,
+  `evaCenterSix` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `evaluation`
+-- Dumping data for table `center`
 --
 
-INSERT INTO `evaluation` (`evaInstructorOne`, `evaInstructorTwo`, `evaInstructorThree`, `evaInstructorFour`, `evaInstructorFive`, `evaInstructorSix`, `evaTrainingOne`, `evaTrainingTwo`, `evaTrainingThree`, `evaTrainingFour`, `evaTrainingFive`, `evaTrainingSix`, `evaCenterOne`, `evaCenterTwo`, `evaCenterThree`, `evaCenterFour`, `evaCenterFive`, `evaCenterSix`) VALUES
-(3, 4, 3, 5, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0),
-(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `center` (`center_id`, `center_course`, `evaCenterOne`, `evaCenterTwo`, `evaCenterThree`, `evaCenterFour`, `evaCenterFive`, `evaCenterSix`) VALUES
+(2, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
+(3, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
+(4, 'MobileDevelopment', 3, 3, 3, 3, 3, 3),
+(5, 'EventsManagement', 4, 4, 4, 4, 4, 4),
+(6, 'TrainingMethodology', 5, 5, 5, 5, 5, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instructor`
+--
+
+CREATE TABLE `instructor` (
+  `instructor_id` int(255) NOT NULL,
+  `instructor_course` varchar(255) NOT NULL,
+  `evaInstructorOne` int(11) NOT NULL,
+  `evaInstructorTwo` int(11) NOT NULL,
+  `evaInstructorThree` int(11) NOT NULL,
+  `evaInstructorFour` int(11) NOT NULL,
+  `evaInstructorFive` int(11) NOT NULL,
+  `evaInstructorSix` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `instructor`
+--
+
+INSERT INTO `instructor` (`instructor_id`, `instructor_course`, `evaInstructorOne`, `evaInstructorTwo`, `evaInstructorThree`, `evaInstructorFour`, `evaInstructorFive`, `evaInstructorSix`) VALUES
+(1, 'CreativeWebDesign', 0, 0, 0, 0, 0, 0),
+(2, 'WebDevelopment', 1, 1, 1, 1, 1, 1),
+(3, 'MobileDevelopment', 2, 2, 2, 2, 2, 2),
+(4, 'EventsManagement', 3, 3, 3, 3, 3, 3),
+(5, 'TrainingMethodology', 4, 4, 4, 4, 4, 4),
+(8, '', 1, 2, 3, 2, 2, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `training`
+--
+
+CREATE TABLE `training` (
+  `training_id` int(255) NOT NULL,
+  `training_course` varchar(255) NOT NULL,
+  `evaTrainingOne` int(255) NOT NULL,
+  `evaTrainingTwo` int(255) NOT NULL,
+  `evaTrainingThree` int(255) NOT NULL,
+  `evaTrainingFour` int(255) NOT NULL,
+  `evaTrainingFive` int(11) NOT NULL,
+  `evaTrainingSix` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `training`
+--
+
+INSERT INTO `training` (`training_id`, `training_course`, `evaTrainingOne`, `evaTrainingTwo`, `evaTrainingThree`, `evaTrainingFour`, `evaTrainingFive`, `evaTrainingSix`) VALUES
+(1, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
+(2, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
+(3, 'MobileDevelopment', 3, 3, 3, 3, 3, 3),
+(4, 'EventsManagement', 4, 4, 4, 4, 4, 4),
+(5, 'TrainingMethodology', 5, 5, 5, 5, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -92,6 +141,24 @@ INSERT INTO `users` (`users_id`, `users_firstname`, `users_lastname`, `users_ema
 --
 
 --
+-- Indexes for table `center`
+--
+ALTER TABLE `center`
+  ADD PRIMARY KEY (`center_id`);
+
+--
+-- Indexes for table `instructor`
+--
+ALTER TABLE `instructor`
+  ADD PRIMARY KEY (`instructor_id`);
+
+--
+-- Indexes for table `training`
+--
+ALTER TABLE `training`
+  ADD PRIMARY KEY (`training_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -100,6 +167,24 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `center`
+--
+ALTER TABLE `center`
+  MODIFY `center_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `instructor`
+--
+ALTER TABLE `instructor`
+  MODIFY `instructor_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `training`
+--
+ALTER TABLE `training`
+  MODIFY `training_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
