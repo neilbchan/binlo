@@ -3,9 +3,7 @@
     define('DB_USER' , 'root');
     define('DB_PASS' , '');
     define('DB_NAME',  'project');
-?>
 
-<?php
     #Create Connection
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -13,7 +11,7 @@
         echo 'Failed to connect to MySQL'.mysqli_connect_errno();
     }
 
-        #Check submit
+    #Check submit
     if (isset($_POST['submit'])) {
         $centerOne = mysqli_real_escape_string($conn, $_POST['cqone']);
         $centerTwo = mysqli_real_escape_string($conn, $_POST['cqtwo']);
@@ -23,7 +21,7 @@
         $centerSix = mysqli_real_escape_string($conn, $_POST['cqsix']);
 
     #Query
-    $query = "INSERT INTO evaluation (evaCenterOne, evaCenterTwo, evaCenterThree, evaCenterFour, evaCenterFive, evaCenterSix) 
+    $query = "INSERT INTO center (evaCenterOne, evaCenterTwo, evaCenterThree, evaCenterFour, evaCenterFive, evaCenterSix) 
               VALUES ('$centerOne', '$centerTwo', '$centerThree', '$centerFour', '$centerFive', '$centerSix')";
 
         if(mysqli_query($conn, $query)) {
@@ -79,11 +77,11 @@
                 <th scope="row">Is the house clean?</th>
                 <td>
                     <div class="radio">
-                        <label style="padding-right: 5px"><input type="radio" name="cqone"> 1</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqone"> 2</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqone"> 3</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqone"> 4</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqone"> 5</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqone" value="1"> 1</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqone" value="2"> 2</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqone" value="3"> 3</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqone" value="4"> 4</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqone" value="5"> 5</label>
                     </div>
                 </td>
             </tr>
@@ -92,11 +90,11 @@
                 <th scope="row">Is the laboratory clean?</th>
                 <td>
                     <div class="radio">
-                        <label style="padding-right: 5px"><input type="radio" name="cqtwo"> 1</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqtwo"> 2</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqtwo"> 3</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqtwo"> 4</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqtwo"> 5</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqtwo" value="1"> 1</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqtwo" value="2"> 2</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqtwo" value="3"> 3</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqtwo" value="4"> 4</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqtwo" value="5"> 5</label>
                     </div>
                 </td>
             </tr>
@@ -105,11 +103,11 @@
                 <th scope="row">Is the C.R. clean?</th>
                 <td>
                     <div class="radio">
-                        <label style="padding-right: 5px"><input type="radio" name="cqthree" > 1</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqthree" > 2</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqthree" > 3</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqthree" > 4</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqthree" > 5</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqthree" value="1"> 1</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqthree" value="2"> 2</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqthree" value="3"> 3</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqthree" value="4"> 4</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqthree" value="5"> 5</label>
                     </div>
                 </td>
             </tr>
@@ -118,11 +116,11 @@
                 <th scope="row">Are the computers working properly?</th>
                 <td>
                     <div class="radio">
-                        <label style="padding-right: 5px"><input type="radio" name="cqfour" > 1</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfour" > 2</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfour" > 3</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfour" > 4</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfour" > 5</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfour" value="1"> 1</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfour" value="2"> 2</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfour" value="3"> 3</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfour" value="4"> 4</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfour" value="5"> 5</label>
                     </div>
                 </td>
             </tr>
@@ -131,11 +129,11 @@
                 <th scope="row">Are the staff approachable? </th>
                 <td>
                     <div class="radio">
-                        <label style="padding-right: 5px"><input type="radio" name="cqfive"> 1</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfive"> 2</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfive"> 3</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfive"> 4</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqfive"> 5</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfive" value="1"> 1</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfive" value="2"> 2</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfive" value="3"> 3</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfive" value="4"> 4</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqfive" value="5"> 5</label>
                     </div>
                 </td>
             </tr>
@@ -144,11 +142,11 @@
                 <th scope="row">Does the house good for learning?</th>
                 <td>
                     <div class="radio">
-                        <label style="padding-right: 5px"><input type="radio" name="cqsix"> 1</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqsix"> 2</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqsix"> 3</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqsix"> 4</label>
-                        <label style="padding-right: 5px"><input type="radio" name="cqsix"> 5</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqsix" value="1"> 1</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqsix" value="2"> 2</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqsix" value="3"> 3</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqsix" value="4"> 4</label>
+                        <label style="padding-right: 5px"><input type="radio" name="cqsix" value="5"> 5</label>
                     </div>
                 </td>
             </tr>

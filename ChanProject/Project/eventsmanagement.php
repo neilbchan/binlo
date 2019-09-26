@@ -61,7 +61,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="report.php">Report</a>
+                    <a href="report/reportEventsManagement.php">Report</a>
                 </li>
                 <li>
                     <a href="#contactSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contact</a>

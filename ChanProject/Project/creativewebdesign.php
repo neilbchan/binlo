@@ -9,14 +9,14 @@
     $users_contact = $_SESSION['users_contact'];
 
 
-    //     if (!isset($_SESSION['users_username'])) {
-    //         ?>
-    //             <script type="text/javascript">
-    //                 alert("You must login first");
-    //                 window.location = "index.php";
-    //             </script>
-    //         <?php
-    // }
+        if (!isset($_SESSION['users_username'])) {
+            ?>
+                <script type="text/javascript">
+                    alert("You must login first");
+                    window.location = "index.php";
+                </script>
+            <?php
+    }
 ?>
 
 
@@ -73,7 +73,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="report.php">Report</a>
+                    <a href="report/reportCreative.php">Report</a>
                 </li>
                 <li>
                     <a href="#contactSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contact</a>
@@ -93,10 +93,6 @@
             <br>
             <button type="button" class="btn btn-secondary btn-lg" style="margin-left: 40px; padding-left: 50px; padding-right: 50px">
                 <a href="index.php">Logout</a>
-                <?php
-                    session_destroy();
-                    unset($_SESSION['users_username']);
-                ?>
             </button>
 
         </nav>

@@ -3,9 +3,7 @@
     define('DB_USER' , 'root');
     define('DB_PASS' , '');
     define('DB_NAME',  'project');
-?>
 
-<?php
     #Create Connection
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -13,7 +11,7 @@
         echo 'Failed to connect to MySQL'.mysqli_connect_errno();
     }
 
-        #Check submit
+    #Check submit
     if (isset($_POST['submit'])) {
         $trainingOne = mysqli_real_escape_string($conn, $_POST['tqone']);
         $trainingTwo = mysqli_real_escape_string($conn, $_POST['tqtwo']);
@@ -23,7 +21,7 @@
         $trainingSix = mysqli_real_escape_string($conn, $_POST['tqsix']);
 
     #Query
-    $query = "INSERT INTO evaluation (evaTrainingOne, evaTrainingTwo, evaTrainingThree, evaTrainingFour, evaTrainingFive, evaTrainingSix) 
+    $query = "INSERT INTO training (evaTrainingOne, evaTrainingTwo, evaTrainingThree, evaTrainingFour, evaTrainingFive, evaTrainingSix) 
               VALUES ('$trainingOne', '$trainingTwo', '$trainingThree', '$trainingFour', '$trainingFive', '$trainingSix')";
 
         if(mysqli_query($conn, $query)) {

@@ -3,7 +3,6 @@
 	require ('config/config.inc.php');
 
     $users_username = $_SESSION['users_username'];
-    echo $users_username;	
     $users_firstname = $_SESSION['users_firstname'];
  	$users_lastname = $_SESSION['users_lastname'];
   	$users_email = $_SESSION['users_email'];
@@ -13,7 +12,7 @@
             ?>
                 <script type="text/javascript">
                     alert("You must login first");
-                    // window.location = "index.php";
+                    window.location = "index.php";
                 </script>
             <?php
     }
@@ -73,7 +72,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="report.php">Report</a>
+                    <a href="report/reportWebdevelopment.php">Report</a>
                 </li>
                 <li>
                     <a href="#contactSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Contact</a>

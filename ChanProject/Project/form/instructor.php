@@ -21,7 +21,7 @@
 		$instructorSix = mysqli_real_escape_string($conn, $_POST['iqsix']);
 
 	#Query
-	$query = "INSERT INTO evaluation (evaInstructorOne, evaInstructorTwo, evaInstructorThree, evaInstructorFour, evaInstructorFive, evaInstructorSix) 
+	$query = "INSERT INTO instructor (evaInstructorOne, evaInstructorTwo, evaInstructorThree, evaInstructorFour, evaInstructorFive, evaInstructorSix) 
 			  VALUES ('$instructorOne', '$instructorTwo', '$instructorThree', '$instructorFour', '$instructorFive', '$instructorSix')";
 
 		if(mysqli_query($conn, $query)) {
