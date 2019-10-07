@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     define('DB_HOST' , 'localhost');
     define('DB_USER' , 'root');
     define('DB_PASS' , '');
@@ -11,6 +13,8 @@
         echo 'Failed to connect to MySQL'.mysqli_connect_errno();
     }
 
+ 
+
     #Check submit
     if (isset($_POST['submit'])) {
         $centerOne = mysqli_real_escape_string($conn, $_POST['cqone']);
@@ -19,10 +23,12 @@
         $centerFour = mysqli_real_escape_string($conn, $_POST['cqfour']);
         $centerFive = mysqli_real_escape_string($conn, $_POST['cqfive']);
         $centerSix = mysqli_real_escape_string($conn, $_POST['cqsix']);
+        $course = $_GET['course'];
+        $users_id = $_SESSION['users_id'];
 
     #Query
-    $query = "INSERT INTO center (evaCenterOne, evaCenterTwo, evaCenterThree, evaCenterFour, evaCenterFive, evaCenterSix) 
-              VALUES ('$centerOne', '$centerTwo', '$centerThree', '$centerFour', '$centerFive', '$centerSix')";
+    $query = "INSERT INTO center (center_course, users_id, evaCenterOne, evaCenterTwo, evaCenterThree, evaCenterFour,     evaCenterFive, evaCenterSix) 
+              VALUES ('$course', '$users_id', '$centerOne', '$centerTwo', '$centerThree', '$centerFour', '$centerFive', '$centerSix')";
 
         if(mysqli_query($conn, $query)) {
 

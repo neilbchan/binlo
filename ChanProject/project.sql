@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2019 at 02:07 PM
+-- Generation Time: Oct 07, 2019 at 07:16 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `center` (
   `center_id` int(255) NOT NULL,
+  `users_id` int(255) NOT NULL,
   `center_course` varchar(255) NOT NULL,
   `evaCenterOne` int(255) NOT NULL,
   `evaCenterTwo` int(255) NOT NULL,
@@ -43,12 +44,19 @@ CREATE TABLE `center` (
 -- Dumping data for table `center`
 --
 
-INSERT INTO `center` (`center_id`, `center_course`, `evaCenterOne`, `evaCenterTwo`, `evaCenterThree`, `evaCenterFour`, `evaCenterFive`, `evaCenterSix`) VALUES
-(2, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
-(3, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
-(4, 'MobileDevelopment', 3, 3, 3, 3, 3, 3),
-(5, 'EventsManagement', 4, 4, 4, 4, 4, 4),
-(6, 'TrainingMethodology', 5, 5, 5, 5, 5, 5);
+INSERT INTO `center` (`center_id`, `users_id`, `center_course`, `evaCenterOne`, `evaCenterTwo`, `evaCenterThree`, `evaCenterFour`, `evaCenterFive`, `evaCenterSix`) VALUES
+(2, 0, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
+(3, 0, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
+(4, 0, 'MobileDevelopment', 3, 3, 3, 3, 3, 3),
+(5, 0, 'EventsManagement', 4, 4, 4, 4, 4, 4),
+(6, 0, 'TrainingMethodology', 5, 5, 5, 5, 5, 5),
+(8, 2, 'CreativeWebDesign', 2, 2, 2, 2, 2, 2),
+(9, 2, 'WebDevelopment', 5, 5, 5, 5, 5, 5),
+(10, 2, 'MobileDevelopment', 4, 4, 5, 4, 5, 4),
+(18, 2, 'EventsManagement', 5, 5, 5, 5, 5, 5),
+(19, 2, 'EventsManagement', 4, 4, 4, 4, 4, 4),
+(20, 2, 'EventsManagement', 5, 5, 5, 5, 5, 5),
+(21, 2, 'TrainingMethodology', 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -58,6 +66,7 @@ INSERT INTO `center` (`center_id`, `center_course`, `evaCenterOne`, `evaCenterTw
 
 CREATE TABLE `instructor` (
   `instructor_id` int(255) NOT NULL,
+  `users_id` int(255) NOT NULL,
   `instructor_course` varchar(255) NOT NULL,
   `evaInstructorOne` int(11) NOT NULL,
   `evaInstructorTwo` int(11) NOT NULL,
@@ -71,13 +80,17 @@ CREATE TABLE `instructor` (
 -- Dumping data for table `instructor`
 --
 
-INSERT INTO `instructor` (`instructor_id`, `instructor_course`, `evaInstructorOne`, `evaInstructorTwo`, `evaInstructorThree`, `evaInstructorFour`, `evaInstructorFive`, `evaInstructorSix`) VALUES
-(1, 'CreativeWebDesign', 0, 0, 0, 0, 0, 0),
-(2, 'WebDevelopment', 1, 1, 1, 1, 1, 1),
-(3, 'MobileDevelopment', 2, 2, 2, 2, 2, 2),
-(4, 'EventsManagement', 3, 3, 3, 3, 3, 3),
-(5, 'TrainingMethodology', 4, 4, 4, 4, 4, 4),
-(8, '', 1, 2, 3, 2, 2, 4);
+INSERT INTO `instructor` (`instructor_id`, `users_id`, `instructor_course`, `evaInstructorOne`, `evaInstructorTwo`, `evaInstructorThree`, `evaInstructorFour`, `evaInstructorFive`, `evaInstructorSix`) VALUES
+(1, 0, 'CreativeWebDesign', 0, 0, 0, 0, 0, 0),
+(2, 0, 'WebDevelopment', 1, 1, 1, 1, 1, 1),
+(3, 0, 'MobileDevelopment', 2, 2, 2, 2, 2, 2),
+(4, 0, 'EventsManagement', 3, 3, 3, 3, 3, 3),
+(5, 0, 'TrainingMethodology', 4, 4, 4, 4, 4, 4),
+(9, 2, 'CreativeWebDesign', 4, 4, 4, 4, 4, 4),
+(11, 2, 'WebDevelopment', 1, 1, 1, 1, 1, 1),
+(12, 2, 'MobileDevelopment', 5, 5, 1, 5, 4, 5),
+(13, 2, 'EventsManagement', 5, 5, 5, 5, 5, 5),
+(14, 2, 'TrainingMethodology', 4, 4, 4, 4, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -87,6 +100,7 @@ INSERT INTO `instructor` (`instructor_id`, `instructor_course`, `evaInstructorOn
 
 CREATE TABLE `training` (
   `training_id` int(255) NOT NULL,
+  `users_id` int(255) NOT NULL,
   `training_course` varchar(255) NOT NULL,
   `evaTrainingOne` int(255) NOT NULL,
   `evaTrainingTwo` int(255) NOT NULL,
@@ -100,12 +114,20 @@ CREATE TABLE `training` (
 -- Dumping data for table `training`
 --
 
-INSERT INTO `training` (`training_id`, `training_course`, `evaTrainingOne`, `evaTrainingTwo`, `evaTrainingThree`, `evaTrainingFour`, `evaTrainingFive`, `evaTrainingSix`) VALUES
-(1, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
-(2, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
-(3, 'MobileDevelopment', 3, 3, 3, 3, 3, 3),
-(4, 'EventsManagement', 4, 4, 4, 4, 4, 4),
-(5, 'TrainingMethodology', 5, 5, 5, 5, 5, 5);
+INSERT INTO `training` (`training_id`, `users_id`, `training_course`, `evaTrainingOne`, `evaTrainingTwo`, `evaTrainingThree`, `evaTrainingFour`, `evaTrainingFive`, `evaTrainingSix`) VALUES
+(1, 0, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
+(2, 0, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
+(3, 0, 'MobileDevelopment', 3, 3, 3, 3, 3, 3),
+(4, 0, 'EventsManagement', 4, 4, 4, 4, 4, 4),
+(5, 0, 'TrainingMethodology', 5, 5, 5, 5, 5, 5),
+(6, 2, 'CreativeWebDesign', 2, 2, 2, 2, 2, 2),
+(7, 2, 'CreativeWebDesign', 1, 1, 1, 1, 1, 1),
+(8, 2, 'WebDevelopment', 2, 2, 2, 2, 2, 2),
+(9, 2, 'CreativeWebDesign', 4, 4, 4, 4, 4, 4),
+(10, 2, 'CreativeWebDesign', 5, 5, 5, 5, 5, 5),
+(11, 2, 'MobileDevelopment', 4, 4, 4, 4, 4, 4),
+(12, 2, 'EventsManagement', 1, 1, 1, 1, 1, 1),
+(13, 2, 'TrainingMethodology', 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -133,8 +155,7 @@ INSERT INTO `users` (`users_id`, `users_firstname`, `users_lastname`, `users_ema
 (2, 'Psalter', 'Cea', 'Pcea@gmail.com', 'Pcea', 'Pcea', 321321, ''),
 (8, 'Bench', 'Zapata', 'Bzap@gmail.com', 'Bzap', 'Bzap', 326568, ''),
 (10, 'Gelo', 'Hernandez', 'gher@gmail.com', 'Gher', 'gher', 123123213, ''),
-(46, 'Regner', 'Peneza', 'Rpeneza@gmail.com', 'Rpeneza', 'rpeneza', 454545, ''),
-(47, 'Bench', 'Zapata', 'lkasdlakd@yao.com', 'Bzapata', 'bzapata', 5454, '');
+(46, 'Regner', 'Peneza', 'Rpeneza@gmail.com', 'Rpeneza', 'rpeneza', 454545, '');
 
 --
 -- Indexes for dumped tables
@@ -172,19 +193,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `center`
 --
 ALTER TABLE `center`
-  MODIFY `center_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `center_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `instructor_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `instructor_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `training`
 --
 ALTER TABLE `training`
-  MODIFY `training_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `training_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`

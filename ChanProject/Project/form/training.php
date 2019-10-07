@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     define('DB_HOST' , 'localhost');
     define('DB_USER' , 'root');
     define('DB_PASS' , '');
@@ -19,10 +21,12 @@
         $trainingFour = mysqli_real_escape_string($conn, $_POST['tqfour']);
         $trainingFive = mysqli_real_escape_string($conn, $_POST['tqfive']);
         $trainingSix = mysqli_real_escape_string($conn, $_POST['tqsix']);
+        $course = $_GET['course'];
+        $users_id = $_SESSION['users_id'];
 
     #Query
-    $query = "INSERT INTO training (evaTrainingOne, evaTrainingTwo, evaTrainingThree, evaTrainingFour, evaTrainingFive, evaTrainingSix) 
-              VALUES ('$trainingOne', '$trainingTwo', '$trainingThree', '$trainingFour', '$trainingFive', '$trainingSix')";
+    $query = "INSERT INTO training (training_course, users_id, evaTrainingOne, evaTrainingTwo, evaTrainingThree, evaTrainingFour,  evaTrainingFive, evaTrainingSix) 
+              VALUES ('$course', '$users_id', '$trainingOne', '$trainingTwo', '$trainingThree', '$trainingFour', '$trainingFive', '$trainingSix')";
 
         if(mysqli_query($conn, $query)) {
 
@@ -156,7 +160,7 @@
 
             <button type="button" onclick="goBack()" class="btn btn-secondary btn-lg" style="margin: 20px; margin-left: 250px; padding-left: 50px; padding-right: 50px">Back</button>
 
-            <button class="btn btn-secondary btn-lg" style="margin: 20px; margin-left: 540px; padding-left: 40px; padding-right: 40px; background-color: #4CAF50;" type="submit" name="submit">Submit</button>
+            <button onclick="goBack()" class="btn btn-secondary btn-lg" style="margin: 20px; margin-left: 540px; padding-left: 40px; padding-right: 40px; background-color: #4CAF50;" type="submit" name="submit">Submit</button>
         </form>
 </body>
 </html>

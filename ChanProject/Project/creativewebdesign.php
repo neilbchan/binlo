@@ -2,6 +2,7 @@
 	session_start();
     require ('config/config.inc.php');
 
+    $users_id = $_SESSION['users_id'];
     $users_username = $_SESSION['users_username'];
 	$users_firstname = $_SESSION['users_firstname'];
  	$users_lastname = $_SESSION['users_lastname'];
@@ -17,6 +18,11 @@
                 </script>
             <?php
     }
+
+        // if(isset($_GET['logout'])){
+        //     session_destroy();
+        //     header("Location: index.php");
+        // }
 ?>
 
 
@@ -91,7 +97,7 @@
             <br>
             <br>
             <br>
-            <button type="button" class="btn btn-secondary btn-lg" style="margin-left: 40px; padding-left: 50px; padding-right: 50px">
+            <button name="logout" type="button" class="btn btn-secondary btn-lg" style="margin-left: 40px; padding-left: 50px; padding-right: 50px">
                 <a href="index.php">Logout</a>
             </button>
 
@@ -125,15 +131,15 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <!--<span style="font-size: 200%; margin-left: -30px">Instructor</span>-->
                     
-                    <a href="form\instructor.php"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
+                    <a href="form\instructor.php?course=<?php echo "CreativeWebDesign";?>"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
-                        <h6 class="card-title" style="font-size: 200%; margin-left: -30px"><a href="instructor.php">Instructor</a></h6>
+                        <h6 class="card-title" style="font-size: 200%; margin-left: -30px">Instructor</a></h6>
                     </div> 
                 </div>
                 
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">   
                     <!--<span style="font-size: 30px; margin-left: -35px">Training</span>-->
-                    <a href="form\training.php"><img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
+                    <a href="form\training.php?course=<?php echo "CreativeWebDesign";?>"><img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 30px; margin-left: -35px">Training</h6>
                     </div>     
@@ -141,7 +147,7 @@
                
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">    
                     <!--<span style="font-size: 30px;">Center</span>-->                 
-                    <a href="form\center.php"><img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"></a> 
+                    <a href="form\center.php?course=<?php echo "CreativeWebDesign";?>"><img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"></a> 
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 30px;">Center</h6>
                     </div>       

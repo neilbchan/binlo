@@ -2,11 +2,13 @@
     session_start();
 	require ('config/config.inc.php');
 
+    $users_id = $_SESSION['users_id'];
     $users_username = $_SESSION['users_username'];
     $users_firstname = $_SESSION['users_firstname'];
  	$users_lastname = $_SESSION['users_lastname'];
   	$users_email = $_SESSION['users_email'];
     $users_contact = $_SESSION['users_contact'];
+
 
         if (!isset($_SESSION['users_username'])) {
             ?>
@@ -124,7 +126,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                     <!--<span style="font-size: 200%; margin-left: -30px">Instructor</span>-->
                     
-                    <a href="form\instructor.php"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
+                    <a href="form\instructor.php?course=<?php echo "WebDevelopment";?>"><img src="images/instructortwo.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 200%; margin-left: -30px"><a href="instructor.php">Instructor</a></h6>
                     </div> 
@@ -132,7 +134,7 @@
                 
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">   
                     <!--<span style="font-size: 30px; margin-left: -35px">Training</span>-->
-                    <a href="form\training.php"><img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
+                    <a href="form\training.php?course=<?php echo "WebDevelopment";?>"><img src="images/training.png" alt="IMG" width="90%" style="margin-right: 50px; margin-top: 35px"></a>
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 30px; margin-left: -35px">Training</h6>
                     </div>     
@@ -140,7 +142,7 @@
                
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 text-center">    
                     <!--<span style="font-size: 30px;">Center</span>-->                 
-                    <a href="form\center.php"><img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"></a> 
+                    <a href="form\center.php?course=<?php echo "WebDevelopment";?>"><img src="images/image.png" alt="IMG" width="90%" style="margin-top: 35px"></a> 
                     <div class="card-body text-center">
                         <h6 class="card-title" style="font-size: 30px;">Center</h6>
                     </div>       

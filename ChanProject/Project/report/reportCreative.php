@@ -1,4 +1,6 @@
 <?php
+	session_start();
+	$users_id = $_SESSION['users_id'];
 	require ('../config/config.inc.php');
 
 	#Check submit
@@ -22,15 +24,15 @@
 			<?php
 	}
 
-	$queryInstructor = "SELECT * FROM instructor WHERE instructor_course = 'CreativeWebDesign'";
+	$queryInstructor = "SELECT * FROM instructor WHERE instructor_course = 'CreativeWebDesign' and users_id = ".$users_id;
   	$resultInstructor = mysqli_query($conn, $queryInstructor);
   	$allInstructor = mysqli_fetch_array($resultInstructor);
 
-	$queryTraining = "SELECT * FROM training WHERE training_course = 'CreativeWebDesign'";
+	$queryTraining = "SELECT * FROM training WHERE training_course = 'CreativeWebDesign'and users_id = ".$users_id;
   	$resultTraining = mysqli_query($conn, $queryTraining);
   	$allTraining = mysqli_fetch_array($resultTraining);
 
-	$queryCenter = "SELECT * FROM center WHERE center_course = 'CreativeWebDesign'";
+	$queryCenter = "SELECT * FROM center WHERE center_course = 'CreativeWebDesign'and users_id = ".$users_id;
   	$resultCenter = mysqli_query($conn, $queryCenter);
   	$allCenter = mysqli_fetch_array($resultCenter);
 ?>
@@ -91,7 +93,7 @@
 				    <th scope="row">Does s/he start his class on time?</th>
 				    <td>
 				    	<div class="radio">
-					<label style="padding-left: 100px"><?php echo $allInstructor['2']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allInstructor['3']; ?></label>
 						</div>
 					</td>
 			    </tr>
@@ -100,7 +102,7 @@
 				    <th scope="row">Does s/he carry himself well? Is s/he well groomed and properly attired?</th>
 				    <td>
 				    	<div class="radio">
-					<label style="padding-left: 100px"><?php echo $allInstructor['3']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allInstructor['4']; ?></label>
 
 				    	</div>
 					</td>
@@ -110,7 +112,7 @@
 			      	<th scope="row">Does s/he have clear audible voice?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allInstructor['4']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allInstructor['5']; ?></label>
 
 		                </div>
 	            	</td>
@@ -120,7 +122,7 @@
 			      	<th scope="row">Does s/he attend classes regularly?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allInstructor['5']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allInstructor['6']; ?></label>
 
 		                </div>
 	            	</td>
@@ -130,7 +132,7 @@
 			      	<th scope="row">Does s/he move around to assist each student during activities/laboratory?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allInstructor['6']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allInstructor['7']; ?></label>
 
 		                </div>
 	            	</td>
@@ -140,7 +142,7 @@
 			        <th scope="row">Does s/he accommodate participants' questions patiently?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allInstructor['7']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allInstructor['8']; ?></label>
 
 		                </div>
 	            	</td>
@@ -174,7 +176,7 @@
 				    <th scope="row">Does s/he start his class on time?</th>
 				    <td>
 				    	<div class="radio">
-					<label style="padding-left: 100px"><?php echo $allTraining['2']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allTraining['3']; ?></label>
 						</div>
 					</td>
 			    </tr>
@@ -183,7 +185,7 @@
 				    <th scope="row">Does s/he carry himself well? Is s/he well groomed and properly attired?</th>
 				    <td>
 				    	<div class="radio">
-					<label style="padding-left: 100px"><?php echo $allTraining['3']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allTraining['4']; ?></label>
 
 				    	</div>
 					</td>
@@ -193,7 +195,7 @@
 			      	<th scope="row">Does s/he have clear audible voice?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allTraining['4']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allTraining['5']; ?></label>
 
 		                </div>
 	            	</td>
@@ -203,7 +205,7 @@
 			      	<th scope="row">Does s/he attend classes regularly?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allTraining['5']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allTraining['6']; ?></label>
 
 		                </div>
 	            	</td>
@@ -213,7 +215,7 @@
 			      	<th scope="row">Does s/he move around to assist each student during activities/laboratory?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allTraining['6']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allTraining['7']; ?></label>
 
 		                </div>
 	            	</td>
@@ -223,7 +225,7 @@
 			        <th scope="row">Does s/he accommodate participants' questions patiently?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allTraining['7']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allTraining['8']; ?></label>
 
 		                </div>
 	            	</td>
@@ -252,7 +254,7 @@
 				    <th scope="row">Does s/he start his class on time?</th>
 				    <td>
 				    	<div class="radio">
-					<label style="padding-left: 100px"><?php echo $allCenter['2']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allCenter['3']; ?></label>
 						</div>
 					</td>
 			    </tr>
@@ -261,7 +263,7 @@
 				    <th scope="row">Does s/he carry himself well? Is s/he well groomed and properly attired?</th>
 				    <td>
 				    	<div class="radio">
-					<label style="padding-left: 100px"><?php echo $allCenter['3']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allCenter['4']; ?></label>
 
 				    	</div>
 					</td>
@@ -271,7 +273,7 @@
 			      	<th scope="row">Does s/he have clear audible voice?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allCenter['4']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allCenter['5']; ?></label>
 
 		                </div>
 	            	</td>
@@ -281,7 +283,7 @@
 			      	<th scope="row">Does s/he attend classes regularly?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allCenter['5']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allCenter['6']; ?></label>
 
 		                </div>
 	            	</td>
@@ -291,7 +293,7 @@
 			      	<th scope="row">Does s/he move around to assist each student during activities/laboratory?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allCenter['6']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allCenter['7']; ?></label>
 
 		                </div>
 	            	</td>
@@ -301,7 +303,7 @@
 			        <th scope="row">Does s/he accommodate participants' questions patiently?</th>
 			      	<td>
 				        <div class="radio">
-					<label style="padding-left: 100px"><?php echo $allCenter['7']; ?></label>
+					<label style="padding-left: 100px"><?php echo $allCenter['8']; ?></label>
 
 		                </div>
 	            	</td>

@@ -20,7 +20,8 @@
 			$user_type = mysqli_fetch_assoc($result);
 			//Check if user is admin
 			if($user_type['users_type'] == 'admin'){
-
+				
+				$_SESSION["users_id"] = $sess->users_id;
 				$_SESSION["users_username"] = $sess->users_username;
 				$_SESSION["users_firstname"] = $sess->users_firstname;
 				$_SESSION["users_lastname"] = $sess->users_lastname;
@@ -35,7 +36,7 @@
 				<?php
 
 			}else{
-
+				$_SESSION["users_id"] = $sess->users_id;
 				$_SESSION["users_username"] = $sess->users_username;
 				$_SESSION["users_firstname"] = $sess->users_firstname;
 				$_SESSION["users_lastname"] = $sess->users_lastname;

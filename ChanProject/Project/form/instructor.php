@@ -1,4 +1,6 @@
 <?php
+	session_start();
+    
 	define('DB_HOST' , 'localhost');
 	define('DB_USER' , 'root');
 	define('DB_PASS' , '');
@@ -6,7 +8,7 @@
 
 	#Create Connection
 	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
+	
 	if(mysqli_connect_errno()){
 		echo 'Failed to connect to MySQL'.mysqli_connect_errno();
 	}
@@ -19,10 +21,12 @@
 		$instructorFour = mysqli_real_escape_string($conn, $_POST['iqfour']);
 		$instructorFive = mysqli_real_escape_string($conn, $_POST['iqfive']);
 		$instructorSix = mysqli_real_escape_string($conn, $_POST['iqsix']);
+		$course = $_GET['course'];
+		$users_id = $_SESSION['users_id'];
 
 	#Query
-	$query = "INSERT INTO instructor (evaInstructorOne, evaInstructorTwo, evaInstructorThree, evaInstructorFour, evaInstructorFive, evaInstructorSix) 
-			  VALUES ('$instructorOne', '$instructorTwo', '$instructorThree', '$instructorFour', '$instructorFive', '$instructorSix')";
+	$query = "INSERT INTO instructor (instructor_course, users_id, evaInstructorOne, evaInstructorTwo, evaInstructorThree, 							evaInstructorFour, evaInstructorFive, evaInstructorSix) 
+			  VALUES ('$course', '$users_id', '$instructorOne', '$instructorTwo', '$instructorThree', '$instructorFour', '$instructorFive', '$instructorSix')";
 
 		if(mysqli_query($conn, $query)) {
 
@@ -36,8 +40,7 @@
 
 
 <!DOCTYPE html>
-<html>
-<head>
+
 	<title>Instructor</title>
 
 	<!-- Bootstrap CSS CDN -->
